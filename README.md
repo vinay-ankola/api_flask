@@ -3,19 +3,33 @@ Building an API with Flask: Route Creation, Error Handling, and HTTP Requests
 
 # curl commands for testing
 curl -X GET -i -w '\n' localhost:5000
+
 curl -X GET -i -w '\n' localhost:5000/no_content
+
 curl -X GET -i -w '\n' localhost:5000/exp
+
 curl -X GET -i -w '\n' localhost:5000/data
+
 curl -X GET -i -w '\n' "localhost:5000/name_search?q=Lilla"
+
 curl -X GET -i -w '\n' "localhost:5000/name_search?q=123"
+
 curl -X GET -i -w '\n' "localhost:5000/name_search?q="
+
 curl -X GET -i -w '\n' "localhost:5000/name_search?q=qwerty"
+
 curl -X GET -i -w '\n' "localhost:5000/count"
+
 curl -X GET -i localhost:5000/person/66c09925-589a-43b6-9a5d-d1601cf53287
+
 curl -X GET -i localhost:5000/person/not-a-valid-uuid
+
 curl -X GET -i localhost:5000/person/11111111-589a-43b6-9a5d-d1601cf51111
+
 curl -X DELETE -i localhost:5000/person/not-a-valid-uuid
+
 curl -X DELETE -i localhost:5000/person/11111111-589a-43b6-9a5d-d1601cf51111
+
 curl -X POST -i -w '\n' \
   --url http://localhost:5000/person \
   --header 'Content-Type: application/json' \
@@ -30,10 +44,15 @@ curl -X POST -i -w '\n' \
         "country": "United States",
         "avatar": "http://dummyimage.com/139x100.png/cc0000/ffffff"
 }'
+
 curl -X POST -i -w '\n' \
   --url http://localhost:5000/person \
   --header 'Content-Type: application/json' \
   --data '{}'
+
 curl -X POST -i -w '\n' http://localhost:5000/notvalid
+
 curl http://localhost:5000/test500
+
+
 
